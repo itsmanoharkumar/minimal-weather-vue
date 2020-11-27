@@ -1,5 +1,8 @@
 # Minimal Weather App
 
+## Pre config
+`create .env file and add keys from .env.sample`
+
 ## Project setup
 ```
 yarn install
