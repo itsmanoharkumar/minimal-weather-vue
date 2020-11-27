@@ -8,7 +8,7 @@
       />
       <input
         placeholder="City"
-        v-model.trim="queryText"
+        v-model.lazy.trim="queryText"
         type="text"
         class="search-box--input"
       />
