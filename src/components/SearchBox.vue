@@ -77,7 +77,6 @@ export default {
         return [];
       }
       return this.cityList?.filter(city => {
-        debugger;
         return (
           city.name.toLowerCase().startsWith(this.queryText.toLowerCase()) ||
           city.name.localeCompare(this.queryText, "en", {
