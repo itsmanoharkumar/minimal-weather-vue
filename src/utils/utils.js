@@ -1,11 +1,13 @@
-const weatherIconMap = {
-  "01d": require("@/assets/icons/sun.svg"),
-  "02d": require("@/assets/icons/fewCloud.svg"),
-  "03d": require("@/assets/icons/clouds.svg"),
-  "04d": require("@/assets/icons/brokenCloud.svg"),
-  "10d": require("@/assets/icons/rainy.svg"),
-  "11d": require("@/assets/icons/thunder.svg")
-};
+import { WEATHER_ICON_MAP, WEEKDAY_MAP } from "@/utils/constants";
+
+/**
+ * Get Day of week based on index {0=Sun}
+ * @param index
+ * @returns {string}
+ */
+export function getDayOfWeek(index) {
+  return WEEKDAY_MAP[index] || "";
+}
 
 /**
  * Get icon from openWeatherApi
@@ -23,5 +25,5 @@ export function _getOpenWeatherIcon(iconId) {
  * @returns {iconUrl}
  */
 export function getWeatherIcon(iconId) {
-  return weatherIconMap[iconId] || _getOpenWeatherIcon(iconId);
+  return WEATHER_ICON_MAP[iconId] || _getOpenWeatherIcon(iconId);
 }

@@ -21,8 +21,7 @@
 </template>
 
 <script>
-import getDayOfWeek from "@/utils/getDayOfWeek";
-import { getWeatherIcon } from "@/utils/utils";
+import { getWeatherIcon, getDayOfWeek } from "@/utils/utils";
 
 export default {
   name: "WeatherDateCard",
