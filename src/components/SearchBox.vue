@@ -69,11 +69,21 @@ export default {
   },
   computed: {
     filteredCityList() {
-      if (!this.queryText || this.queryText.length <= 1) {
+      if (
+        !this.queryText ||
+        this.queryText.length <= 1 ||
+        this.queryText === "Current City"
+      ) {
         return [];
       }
       return this.cityList?.filter(city => {
-        return city.name.toLowerCase().startsWith(this.queryText.toLowerCase());
+        debugger;
+        return (
+          city.name.toLowerCase().startsWith(this.queryText.toLowerCase()) ||
+          city.name.localeCompare(this.queryText, "en", {
+            sensitivity: "base"
+          }) === 0
+        );
       });
     },
     currentWeather() {
