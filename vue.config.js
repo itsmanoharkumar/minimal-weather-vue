@@ -1,3 +1,9 @@
 module.exports = {
-  lintOnSave: false
+  lintOnSave: false,
+
+  pwa: {
+    name: "Minimal Weather App"
+  },
+
+  assetsDir: "assets"
 };
