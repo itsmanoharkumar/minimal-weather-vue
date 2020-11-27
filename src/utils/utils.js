@@ -6,15 +6,22 @@ const weatherIconMap = {
   "10d": require("@/assets/icons/rainy.svg"),
   "11d": require("@/assets/icons/thunder.svg")
 };
-export function getOpenWeatherIcon(iconId) {
+
+/**
+ * Get icon from openWeatherApi
+ * @param iconId
+ * @returns {iconUrl}
+ * @private
+ */
+export function _getOpenWeatherIcon(iconId) {
   return `http://openweathermap.org/img/wn/${iconId}@2x.png`;
 }
 
+/**
+ * Get weather icon based on openWeatherApi icon id
+ * @param iconId
+ * @returns {iconUrl}
+ */
 export function getWeatherIcon(iconId) {
-  const iconUrl = weatherIconMap[iconId];
-  if (iconUrl) {
-    return iconUrl;
-  } else {
-    return getOpenWeatherIcon(iconId);
-  }
+  return weatherIconMap[iconId] || _getOpenWeatherIcon(iconId);
 }

@@ -34,7 +34,7 @@
 
 <script>
 import CityListItem from "@/components/CityListItem";
-const cityList = () => import("@/assets/cityList.json");
+const cityList = () => import("@/assets/resource/cityList.json");
 export default {
   name: "SearchBox",
   components: { CityListItem },

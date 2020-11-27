@@ -52,9 +52,9 @@ export default {
     day() {
       let date = new Date();
       date.setDate(date.getDate() + this.index);
-      let day = getDayOfWeek(date.getDay());
+      return getDayOfWeek(date.getDay());
       // let day = getDayOfWeek((date.getDay() + this.index) % 7);
-      return day.slice(0, 3);
+      // return day.slice(0, 3);
     },
     iconUrl() {
       return getWeatherIcon(this.weatherDetail.weather[0].icon);

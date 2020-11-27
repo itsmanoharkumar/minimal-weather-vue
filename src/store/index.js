@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import fetchWeather from "@/api/weatherApi";
+import fetchWeatherApi from "@/api/weatherApi";
 
 export default createStore({
   state: {
@@ -17,7 +17,7 @@ export default createStore({
   actions: {
     async fetchWeather({ state, commit }, payload) {
       if (!state.weatherList.has(payload.name)) {
-        const response = await fetchWeather(payload.coord);
+        const response = await fetchWeatherApi(payload.coord);
         commit("ADD_WEATHER", { key: payload.name, value: response });
         return response;
       } else {
